@@ -17,6 +17,8 @@
  */
 package jcifs;
 
+import java.lang.IllegalStateException;
+import java.lang.UnsupportedOperationException;
 
 /**
  * @author mbechler
@@ -45,6 +47,13 @@ public class EmptyIterator implements CloseableIterator<SmbResource> {
         return null;
     }
 
+     /**
+     * {@inheritDoc}
+     *
+     * @see java.util.Iterator#remove()
+     */
+    @Override
+    public void remove () throws UnsupportedOperationException, IllegalStateException {}
 
     /**
      * {@inheritDoc}
